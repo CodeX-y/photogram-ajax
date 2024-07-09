@@ -1,0 +1,9 @@
+console.log("Create!!!")
+
+<!-- $=> search, # => select id -->
+var curLikes = $("#<%= dom_id(@like.photo) %>_likes");
+
+<!-- j => js, render the page that does the test. Then, grab the current object that's being changed. The render will replace it. -->
+var addLike = $("<%= j(render "photos/likes", photo: @like.photo)%>")
+
+curLikes.replaceWith(addLike)
